@@ -224,7 +224,15 @@ if (typeof document !== 'undefined') {
   });
 }
 
-module.exports = {
-  DiceGame,
-  gameInstance: game
-};
+// module.exports = {
+//   DiceGame,
+//   gameInstance: game
+// };
+
+if (typeof window !== 'undefined') {
+  window.game = game;
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { gameInstance: game, DiceGame };
+}
