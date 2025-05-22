@@ -65,31 +65,32 @@ class DiceGame {
       document.getElementById('finalize-button').style.display = 'inline-block';
       document.getElementById('roll-button').style.display = 'none';
     }
-    this.gameFinished = true;
   }
-
-  showFinalResult() {
-    if (this.gameFinished) return;
+showFinalResult() {
+    if (this.gameFinished) {
+        this.updateStatsDisplay();
+        return;
+    }
     
     this.gameFinished = true;
     this.stats.gamesPlayed++;
     
     let winner;
     if (this.player1Score > this.player2Score) {
-      winner = "Древний Дух восторжествовал!";
-      this.stats.player1Wins++;
+        winner = "Древний Дух восторжествовал!";
+        this.stats.player1Wins++;
     } else if (this.player2Score > this.player1Score) {
-      winner = "Лесной Хранитель одержал победу!";
-      this.stats.player2Wins++;
+        winner = "Лесной Хранитель одержал победу!";
+        this.stats.player2Wins++;
     } else {
-      winner = "Силы остались в равновесии!";
-      this.stats.draws++;
+        winner = "Силы остались в равновесии!";
+        this.stats.draws++;
     }
     
     this.updateFinalResult(winner);
     this.saveStats();
     this.updateStatsDisplay();
-  }
+}
 
   updateStatsDisplay() {
     if (typeof document === 'undefined') return;
@@ -223,11 +224,6 @@ if (typeof document !== 'undefined') {
     });
   });
 }
-
-// module.exports = {
-//   DiceGame,
-//   gameInstance: game
-// };
 
 if (typeof window !== 'undefined') {
   window.game = game;
