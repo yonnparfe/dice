@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cinzel+Decorative&display=swap');
+        
+        body {
+            font-family: 'Cinzel Decorative', cursive;
+            background-color: #0a1a0a;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(10, 80, 30, 0.3) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(80, 50, 10, 0.3) 0%, transparent 20%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,10 Q50,0 70,10 T90,30 Q100,50 90,70 T70,90 Q50,100 30,90 T10,70 Q0,50 10,30 T30,10" fill="none" stroke="%23225522" stroke-width="0.5"/></svg>');
+            color: #e8d8b0;
+        }
+        
+        .container {
+            background-color: rgba(20, 30, 15, 0.9);
+            border-radius: 15px;
+            border: 2px solid #5a3e1a;
+            box-shadow: 0 0 30px rgba(50, 100, 30, 0.5),
+                        inset 0 0 20px rgba(100, 70, 30, 0.3);
+            padding: 30px;
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,20 L30,50 L10,70 L40,70 L50,90 L60,70 L90,70 L70,50 L80,20 L50,40 L20,20" fill="none" stroke="%235a3e1a" stroke-width="0.3"/></svg>');
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        h1 {
+            color: #d4b16a;
+            margin-bottom: 30px;
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px #000, 0 0 10px #5a3e1a;
+            letter-spacing: 2px;
+        }
+        
+        button {
+            background: linear-gradient(to bottom, #5a3e1a, #3a2a10);
+            color: #e8d8b0;
+            border: 1px solid #7a5a30;
+            padding: 12px 24px;
+            margin: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Cinzel Decorative', cursive;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5),
+                        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+            text-shadow: 1px 1px 2px #000;
+        }
+        
+        button:hover {
+            background: linear-gradient(to bottom, #7a5a30, #5a3e1a);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5),
+                        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+        }
+        
+        button:active {
+            transform: translateY(1px);
+        }
+        
+        button:disabled {
+            background: linear-gradient(to bottom, #3a3a3a, #2a2a2a);
+            color: #7a7a7a;
+            border-color: #5a5a5a;
+            cursor: not-allowed;
+        }
+        
+        #roll-button, #finalize-button, #clear-stats {
+            display: none;
+        }
+        
+        .players-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            gap: 20px;
+        }
+        
+        .player {
+            background: rgba(30, 40, 20, 0.7);
+            border-radius: 12px;
+            padding: 25px;
+            width: 45%;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5),
+                        0 0 10px rgba(100, 80, 30, 0.3);
+            border: 1px solid #5a3e1a;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .player::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, transparent, #d4b16a, transparent);
+            opacity: 0.3;
+        }
+        
+        .player h2 {
+            color: #d4b16a;
+            margin-top: 0;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 3px #000;
+            border-bottom: 1px dashed #5a3e1a;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .dice {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 25px 0;
+        }
+        
+        .die {
+            width: 70px;
+            height: 70px;
+            background: #1a1a0a;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8),
+                        0 0 5px rgba(100, 80, 30, 0.5);
+            border: 1px solid #5a3e1a;
+            color: #e8d8b0;
+            position: relative;
+        }
+        
+        .die::after {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            border: 1px solid rgba(100, 80, 30, 0.3);
+            border-radius: 8px;
+            pointer-events: none;
+        }
+        
+        .score {
+            font-size: 20px;
+            font-weight: bold;
+            color: #d4b16a;
+            text-shadow: 1px 1px 2px #000;
+            margin-top: 15px;
+        }
+        
+        #current-round {
+            font-size: 20px;
+            margin: 25px 0;
+            color: #b8a070;
+            text-shadow: 1px 1px 2px #000;
+            font-style: italic;
+        }
+        
+        #final-result {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d4b16a;
+            margin-top: 25px;
+            min-height: 40px;
+            text-shadow: 1px 1px 3px #000;
+            font-family: 'UnifrakturMaguntia', cursive;
+            letter-spacing: 1px;
+        }
+        
+        .active-player {
+            box-shadow: 0 0 20px rgba(100, 80, 30, 0.5),
+                        inset 0 0 10px rgba(255, 215, 100, 0.2);
+            border: 1px solid #d4b16a;
+            background: rgba(50, 60, 30, 0.7);
+        }
+        
+        .stats {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(20, 30, 15, 0.8);
+            border-radius: 10px;
+            text-align: left;
+            border: 1px solid #5a3e1a;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .stats h3 {
+            margin-top: 0;
+            color: #d4b16a;
+            border-bottom: 1px dashed #5a3e1a;
+            padding-bottom: 8px;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px #000;
+        }
+        
+        .stats div {
+            margin: 10px 0;
+            padding-left: 15px;
+            position: relative;
+            font-size: 18px;
+        }
+        
+        .stats div::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #d4b16a;
+        }
+        
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #d4b16a; }
+            50% { text-shadow: 0 0 15px #d4b16a; }
+            100% { text-shadow: 0 0 5px #d4b16a; }
+        }
+        
+        .glowing-text {
+            animation: glow 2s infinite;
+        }

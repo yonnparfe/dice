@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Тайны Лесных Костей</title>
+</head>
+<body>
+<div class="container">
+        <h1 class="glowing-text">Тайны Лесных Костей</h1>
+        <button id="start-button">Начать Игру</button>
+        <button id="roll-button">Бросить Кости</button>
+        <button id="finalize-button">Завершить Испытание</button>
+        <button id="clear-stats">Стереть Память Леса</button>
+        
+        <div id="current-round">Текущее испытание: 1 (Сумма пророчества: 1)</div>
+        
+        <div class="players-container">
+            <div id="player1" class="player">
+                <h2>Страж Грозовых Туч</h2>
+                <div class="dice">
+                    <div id="die1" class="die">?</div>
+                    <div id="die2" class="die">?</div>
+                </div>
+                <div id="result" class="score">Сила Стража: 0</div>
+            </div>
+            
+            <div id="player2" class="player">
+                <h2>Лесной Хранитель</h2>
+                <div class="dice">
+                    <div id="die3" class="die">?</div>
+                    <div id="die4" class="die">?</div>
+                </div>
+                <div id="result2" class="score">Мудрость Хранителя: 0</div>
+            </div>
+        </div>
+        
+        <div id="final-result"></div>
+        
+        <div class="stats">
+            <h3>Хроники Леса:</h3>
+            <div id="games-played">Всего игр: 0</div>
+            <div id="player1-wins">Побед Стража Грозовых Туч: 0</div>
+            <div id="player2-wins">Побед Лесного Хранителя: 0</div>
+            <div id="draws">Равновесий: 0</div>
+        </div>
+    </div>
+    
+    
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+

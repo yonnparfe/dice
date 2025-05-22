@@ -1,0 +1,24 @@
+@startuml  
+package "Тайны Лесных Костей" {
+  package "Игровая логика" {
+    [DiceGame] as Game
+    [Dice]
+  }
+  
+  package "Пользовательский интерфейс" {
+    [HTML]
+    [CSS]
+    [DOM API]
+  }
+  
+  package "Хранение данных" {
+    [Cookies]
+  }
+}
+
+[Игрок] --> [HTML]
+[HTML] --> [CSS]
+[HTML] --> [DOM API]
+[DOM API] --> [Game]
+[Game] --> [Cookies]
+@enduml
